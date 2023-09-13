@@ -8,7 +8,7 @@ fi
 
 export SERVER=$(hostname)
 
-docker run -d --name nats-main \
+docker run --rm -d --name nats-main \
        -v /home/ubuntu/nats:/home/ubuntu/nats \
        -v ./config-cluster.json:/etc/nats/nats-server.conf \
        -e TOKEN=$TOKEN -e SERVER=$SERVER \
